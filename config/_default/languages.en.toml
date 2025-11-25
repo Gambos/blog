@@ -2,27 +2,37 @@ disabled = false
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Blowfish"
+title = "Home Page"
 
 [params]
   displayName = "EN"
   isoCode = "en"
   rtl = false
-  dateFormat = "2 January 2006"
+  dateFormat = "January 2, 2006"
   logo = "img/logo.png"
   secondaryLogo = "img/secondary-logo.png"
   description = "My awesome website"
-  copyright = "Copy, _right?_ :thinking_face:"
+  # copyright = "Copy, _right?_ :thinking_face:"
 
 [params.author]
-name = "Yao"
+name = "Yao Xiang"
 email = "xiangyaontt@gmail.com"
 image = "img/Me.jpg"
 imageQuality = 96
-headline = "smartass"
-bio = "Happy elephant"
+headline = """
+Data Engineer  
+Illustrator  
+Striker
+<br><br>
+<br><br>
+<span class="headline-small">*Meant to be a tech blog but  
+actually I just dump everything  
+I found interesting here.*
+</span>"""
 links = [
-#     { email = "mailto:hello@your_domain.com" },
+      { github = "https://github.com/Gambos" },
+      { linkedin = "https://www.linkedin.com/in/yao-xiang/" },
+#     { email = "xiangyaontt@gmail.com" },
 #     { link = "https://link-to-some-website.com/" },
 #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
 #     { apple = "https://www.apple.com" },
@@ -35,7 +45,6 @@ links = [
 #     { facebook = "https://facebook.com/username" },
 #     { flickr = "https://www.flickr.com/photos/username/" },
 #     { foursquare = "https://foursquare.com/username" },
-     { github = "https://github.com/Gambos" },
 #     { gitlab = "https://gitlab.com/username" },
 #     { google = "https://www.google.com/" },
 #     { hashnode = "https://username.hashnode.dev" },
@@ -45,7 +54,6 @@ links = [
 #     { keyoxide = "https://keyoxide.org/URI" },
 #     { kickstarter = "https://www.kickstarter.com/profile/username" },
 #     { lastfm = "https://lastfm.com/user/username" },
-#     { linkedin = "https://linkedin.com/in/username" },
 #     { mastodon = "https://mastodon.instance/@username" },
 #     { matrix = "https://matrix.to/#/URI" },
 #     { medium = "https://medium.com/username" },

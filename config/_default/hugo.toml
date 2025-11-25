@@ -18,6 +18,9 @@ enableEmoji = true
 
 # googleAnalytics = "G-XXXXXXXXX"
 
+[params]
+    customCSS = ["css/custom.css"]
+    
 [pagination]
   pagerSize = 100
 

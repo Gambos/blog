@@ -1,13 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blowfish</title>
-    <link>//localhost:1313/</link>
-    <description>Recent content on Blowfish</description>
+    <title>Home Page</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content on Home Page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2025 </copyright>
-    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>xiangyaontt@gmail.com (Yao Xiang)</managingEditor>
+    <webMaster>xiangyaontt@gmail.com (Yao Xiang)</webMaster>
+    
+    <lastBuildDate>Mon, 17 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>My First Article</title>
+      <link>http://localhost:1313/blog/posts/test-copy-2/</link>
+      <pubDate>Mon, 17 Nov 2025 00:00:00 +0000</pubDate>
+      <author>xiangyaontt@gmail.com (Yao Xiang)</author>
+      <guid>http://localhost:1313/blog/posts/test-copy-2/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>My First Article</title>
+      <link>http://localhost:1313/blog/posts/test-copy/</link>
+      <pubDate>Mon, 17 Nov 2025 00:00:00 +0000</pubDate>
+      <author>xiangyaontt@gmail.com (Yao Xiang)</author>
+      <guid>http://localhost:1313/blog/posts/test-copy/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>My First Article</title>
+      <link>http://localhost:1313/blog/posts/test/</link>
+      <pubDate>Mon, 17 Nov 2025 00:00:00 +0000</pubDate>
+      <author>xiangyaontt@gmail.com (Yao Xiang)</author>
+      <guid>http://localhost:1313/blog/posts/test/</guid>
+      <description></description>
+      
+    </item>
     
   </channel>
 </rss>

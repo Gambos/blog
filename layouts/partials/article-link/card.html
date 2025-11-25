@@ -1,0 +1,226 @@
+{{/* Used by
+  1. list.html and term.html (when the cardView option is enabled)
+  2. Recent articles template (when the cardView option is enabled)
+  3. Shortcode list.html
+*/}}
+{{ $disableImageOptimization := site.Store.Get "disableImageOptimization" }}
+
+{{ $page := .Page }}
+{{ $featured := "" }}
+{{ $featuredURL := "" }}
+{{ if not .Params.hideFeatureImage }}
+  {{/* frontmatter */}}
+  {{ with $page }}
+    {{ with .Params.featureimage }}
+      {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+        {{ if site.Params.hotlinkFeatureImage }}
+          {{ $featuredURL = . }}
+        {{ else }}
+          {{ $featured = resources.GetRemote . }}
+        {{ end }}
+      {{ else }}
+        {{ $featured = resources.Get . }}
+      {{ end }}
+    {{ end }}
+
+    {{/* page resources */}}
+    {{ if not (or $featured $featuredURL) }}
+      {{ $images := .Resources.ByType "image" }}
+      {{ range slice "*feature*" "*cover*" "*thumbnail*" }}
+        {{ if not $featured }}{{ $featured = $images.GetMatch . }}{{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{/* fallback to default */}}
+    {{ if not (or $featured $featuredURL) }}
+      {{ $default := site.Store.Get "defaultFeaturedImage" }}
+      {{ if $default.url }}
+        {{ $featuredURL = $default.url }}
+      {{ else if $default.obj }}
+        {{ $featured = $default.obj }}
+      {{ end }}
+    {{ end }}
+
+    {{/* generate image URL if not hotlink */}}
+    {{ if not $featuredURL }}
+      {{ with $featured }}
+        {{ $featuredURL = .RelPermalink }}
+        {{ if not (or $disableImageOptimization (eq .MediaType.SubType "svg")) }}
+          {{ $featuredURL = (.Resize "600x").RelPermalink }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<style>
+  /* 定义卡片基础样式 */
+  .custom-glass-card {
+    position: relative;
+    width: 90%;
+    margin: 0 auto 1.5rem auto !important;
+    overflow: hidden;
+
+    /* 渲染层级修复 (关键) */
+    position: relative;
+    height: auto !important; /* 严禁使用 min-height:100%，会导致渲染错位 */
+    transform: translateZ(0); /* 开启 GPU 加速，修复毛玻璃边缘撕裂 */
+    -webkit-font-smoothing: antialiased; /* 字体抗锯齿 */
+    
+    /* 核心：毛玻璃背景 */
+    background-color: rgba(255, 255, 255, 0.25) !important; /* 基础透明度 */
+    backdrop-filter: blur(12px) !important; /* 模糊背景 */
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* 边框与圆角 */
+    border: 1px solid rgba(255, 255, 255, 0.5) !important; /* 半透明白边 */
+    border-radius: 24px !important; /* 大圆角，对应 Figma */
+    
+    /* 阴影 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    
+    /* 动画过渡 */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  /* 定义 Hover 悬停样式 */
+  .custom-glass-card:hover {
+    transform: translateY(-4px) translateZ(0) !important; /* 上浮效果，保持 GPU 加速 */
+    
+    /* 悬停时的渐变背景 */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(230, 240, 255, 0.4)) !important;
+    
+    /* 边框发光 */
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    
+    /* 弥散阴影 */
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  /* 字体排版优化 */
+  /* 1. 标题：深蓝灰，字重适中，不再傻大黑 */
+  .glass-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400 !important; /* 从 bold 改为 normal/400 */
+    font-size: 1.4rem !important; /* 稍微调小一点，更精致 */
+    color: #334155 !important; /* Slate-700 高级灰 */
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  .custom-glass-card:hover .glass-title {
+    color: #34c6b2 !important; /* Hover时变为蓝色，增加交互感 */
+    transition: color 0.2s ease;
+  }
+
+  /* 2. 元信息 (日期/时间)：纯净的灰色，无背景色 */
+  .glass-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem !important;
+    color: #7ca0a4 !important; /* Slate-500 */
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .custom-glass-card:hover .glass-meta {
+    color: #74b5aa !important; /* Hover时变为蓝色，增加交互感 */
+  }
+   /* 分隔圆点 */
+  .meta-dot {
+    width: 3px;
+    height: 3px;
+    background-color: #bcc7d4;
+    border-radius: 50%;
+  }
+
+  /* 3. 摘要：增加行高，颜色更浅，呼吸感 */
+  .glass-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem !important;
+    color: #567386 !important; /* Slate-600 */
+    line-height: 1.7 !important; /* 黄金行高 */
+    font-weight: 300 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 最多显示2行 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+
+<article
+  class="custom-glass-card group">
+  {{ with $featuredURL }}
+    <div class="flex-none relative overflow-hidden thumbnail_card">
+      <img
+        src="{{ . }}"
+        alt="{{ $page.Title | plainify }}"
+        loading="lazy"
+        decoding="async"
+        class="not-prose absolute inset-0 w-full h-full object-cover">
+    </div>
+  {{ end }}
+  {{ if and .Draft .Site.Params.article.showDraftLabel }}
+    <span class="absolute top-0 right-0 m-2">
+      {{ partial "badge.html" (i18n "article.draft" | emojify) }}
+    </span>
+  {{ end }}
+
+  {{/* 内容区域 */}}
+  <div class="px-6 py-4">
+    <header>
+      <a
+        {{ with $page.Params.externalUrl }}
+          href="{{ . }}" target="_blank" rel="external"
+        {{ else }}
+          href="{{ $page.RelPermalink }}"
+        {{ end }}
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800">
+        <h2 class="glass-title">
+          {{ .Title | emojify }}
+          {{ if .Params.externalUrl }}
+            <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
+              <span class="rtl:hidden">&#8599;</span>
+              <span class="ltr:hidden">&#8598;</span>
+            </span>
+          {{ end }}
+        </h2>
+      </a>
+    </header>
+
+    <!--<div class="text-sm text-neutral-500 dark:text-neutral-400">
+      {{ partial "article-meta/basic.html" . }}
+    </div>-->
+
+    <div class="glass-meta">
+          <!-- 日期 -->
+          <time datetime="{{ .Date }}" class="opacity-90">
+            {{ .Date.Format "Nov 02, 2006" }}
+          </time>
+
+          <!-- 分隔点 -->
+          <span class="meta-dot"></span>
+
+          <!-- 字数统计 -->
+          <span>{{ .WordCount }} words</span>
+
+          <!-- 分隔点 -->
+          <span class="meta-dot"></span>
+          
+          <!-- 阅读时间 -->
+          <span class="opacity-90">
+            {{ .ReadingTime }} min read
+          </span>
+    </div>
+    
+    {{ with .Params.description }}
+      <div class="glass-desc">
+        {{ . }}
+      </div>
+    {{ end }}
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
