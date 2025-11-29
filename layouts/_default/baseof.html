@@ -8,15 +8,22 @@
   {{- partial "head.html" . -}}
   {{- partialCached "init.html" . -}}
 
+   {{/* 
+     1. 定义背景图路径：图片放在 static/img/background.jpg
+  */}}
+  {{ $bgImage := "img/Frame.jpg" | relURL }}
+
   {{ $bodyLayout := "flex flex-col h-screen w-full leading-7 px-2" }}
-  {{ $bodyColor := "text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral" }}
+  {{ $bodyColor := "text-lg text-neutral-900" }}
   {{ $bodyScrollbar := "scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600" }}
-  <body class="{{ $bodyLayout }} {{ $bodyColor }} {{ $bodyScrollbar }}">
+  <body class="{{ $bodyLayout }} {{ $bodyColor }} {{ $bodyScrollbar }}"
+        style="background-image: url('{{ $bgImage }}'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat;">
+ 
     <div id="the-top" class="absolute flex self-center">
       <a
-        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0"
         href="#main-content">
-        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        <span class="font-bold text-primary-600 pe-2">&darr;</span>
         {{ i18n "nav.skip_to_main" }}
       </a>
     </div>
@@ -26,7 +33,7 @@
     {{ else }}
       {{ partial "header/basic.html" . }}
     {{ end }}
-    <div class="relative flex flex-col grow">
+    <div class="relative flex flex-col grow mt-10">
       <main id="main-content" class="grow">
         {{ block "main" . }}{{ end }}
         {{ if and (site.Params.footer.showScrollToTop | default true) }}

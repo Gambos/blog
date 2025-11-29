@@ -1,4 +1,4 @@
-/* 移除 themes\blowfish\layouts\partials\home\background.html 的两个渐变蒙版 */
+/* 移除 layouts\partials\home\background.html 的两个渐变蒙版 */
 #background-image + div,
 #background-image + div + div {
   display: none !important;
@@ -35,6 +35,10 @@ body {
 
 .gap-x-50 {
   column-gap: calc(var(--spacing) * 50);
+}
+
+.mt-10 {
+  margin-top: calc(var(--spacing) * 10);
 }
 
 .mt-20 {
