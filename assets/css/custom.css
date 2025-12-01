@@ -61,3 +61,37 @@ body {
   object-fit: cover;
 }
 
+.custom-list-title {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.article-title {
+  color: #334155;
+  position: relative;
+}
+
+.article-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;  /* 下划线离文字距离，可调 */
+  width: 0;
+  height: 1px;
+  background-color: rgba(51, 65, 85, 0.4); /* #334155 的更淡版本 */
+  transition: width 0.25s ease;  /* 动画时长 */
+}
+
+.article-title:hover::after {
+  width: 100%;
+}
+
+.article-meta {
+  font-size: 0.85rem !important;
+  color: #7ca0a4 !important;
+  font-weight: 400;
+}

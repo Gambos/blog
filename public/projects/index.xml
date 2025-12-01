@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home Page</title>
+    <link>http://localhost:1313/blog/projects/</link>
+    <description>Recent content on Home Page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>xiangyaontt@gmail.com (Yao Xiang)</managingEditor>
+    <webMaster>xiangyaontt@gmail.com (Yao Xiang)</webMaster>
+    
+    <lastBuildDate>Fri, 21 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>My First Project</title>
+      <link>http://localhost:1313/blog/projects/test-copy-2/</link>
+      <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
+      <author>xiangyaontt@gmail.com (Yao Xiang)</author>
+      <guid>http://localhost:1313/blog/projects/test-copy-2/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>My Second Project</title>
+      <link>http://localhost:1313/blog/projects/test-copy-3/</link>
+      <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
+      <author>xiangyaontt@gmail.com (Yao Xiang)</author>
+      <guid>http://localhost:1313/blog/projects/test-copy-3/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

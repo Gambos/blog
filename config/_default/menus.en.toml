@@ -20,24 +20,22 @@
   pageRef = "projects"
   weight = 20
 
-[[main]]
-  name = "CV"
-  pageRef = "CV"
-  weight = 21
+# [[main]]
+#  name = "CV"
+#  pageRef = "CV"
+#  weight = 21
 
 [[main]]
   name = "Gallery"
+  identifier = "gallery"
   weight = 30
 [[main]]
   name = "Illustration"
-  parent = "Gallery"
-  pageRef = "posts"
+  identifier = "illustration"
+  parent = "gallery"
+  pageRef = "/illustration"
   weight = 31
-[[main]]
-  name = "Design"
-  parent = "Gallery"
-  pageRef = "posts"
-  weight = 32
+
 
 #[[subnavigation]]
 #  name = "An interesting topic"

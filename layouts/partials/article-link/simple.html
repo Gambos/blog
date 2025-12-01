@@ -92,7 +92,7 @@
         {{ else }}
           href="{{ $page.RelPermalink }}"
         {{ end }}
-        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        class="article-title">
         <h2>
           {{ .Title | emojify }}
           {{ if .Params.externalUrl }}
@@ -110,7 +110,7 @@
         {{ partial "extend-article-link.html" . }}
       {{ end }}
     </header>
-    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+    <div class="article-meta">
       {{ partial "article-meta/basic.html" . }}
     </div>
     {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
