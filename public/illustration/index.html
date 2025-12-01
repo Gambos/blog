@@ -800,30 +800,34 @@
 
 </style>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  // 1. 创建观察者
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      // 如果元素进入画面 (哪怕只进入了一点点)
-      if (entry.isIntersecting) {
-        // 给它加上 'in-view' 类，触发 CSS 动画
-        entry.target.classList.add('in-view');
-        // 动画只要触发一次就行了，取消观察，节省性能
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    // 配置：threshold 0.1 表示元素露出 10% 时就触发
-    threshold: 0.1,
-    // rootMargin 可以在元素还没完全进屏幕（比如距离底部还有50px）时就提前触发，更自然
-    rootMargin: "0px 0px -50px 0px"
+document.addEventListener("DOMContentLoaded", function () {
+  const imgs = document.querySelectorAll(".gallery-item img");
+  let loaded = 0;
+
+  imgs.forEach(img => {
+    if (img.complete) {
+      loaded++;
+      if (loaded === imgs.length) initObserver();
+    } else {
+      img.addEventListener("load", () => {
+        loaded++;
+        if (loaded === imgs.length) initObserver();
+      });
+    }
   });
 
-  // 2. 找到所有画廊卡片并开始观察
-  const items = document.querySelectorAll('.gallery-item');
-  items.forEach(item => {
-    observer.observe(item);
-  });
+  function initObserver() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    document.querySelectorAll('.gallery-item').forEach(el => observer.observe(el));
+  }
 });
 </script>
 <div class="santjer-gallery">
