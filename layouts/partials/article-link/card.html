@@ -105,7 +105,7 @@
     font-weight: 400 !important; /* 从 bold 改为 normal/400 */
     font-size: 1.4rem !important; /* 稍微调小一点，更精致 */
     color: #334155 !important; /* Slate-700 高级灰 */
-    letter-spacing: -0.01em;
+    letter-spacing: 0.02em;
     line-height: 1.4;
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
@@ -124,7 +124,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.2rem;
   }
   .custom-glass-card:hover .glass-meta {
     color: #74b5aa !important; /* Hover时变为蓝色，增加交互感 */
@@ -144,6 +144,8 @@
     color: #567386 !important; /* Slate-600 */
     line-height: 1.7 !important; /* 黄金行高 */
     font-weight: 300 !important;
+    letter-spacing: 0.02em;
+    margin-top: 0.6rem;
     display: -webkit-box;
     -webkit-line-clamp: 2; /* 最多显示2行 */
     -webkit-box-orient: vertical;
@@ -216,6 +218,16 @@
           </span>
     </div>
     
+    {{ with .Params.tags }}
+      <div class="flex flex-row flex-wrap items-center" style="margin-left: -2px;">
+        {{ range $.GetTerms "tags" }}
+          <a class="relative me-2"href="{{ .RelPermalink }}">
+          {{ partial "badge.html" .LinkTitle }}
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+
     {{ with .Params.description }}
       <div class="glass-desc">
         {{ . }}

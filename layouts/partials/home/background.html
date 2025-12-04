@@ -19,6 +19,13 @@ false }}
     line-height: 1.15;
     margin-left: 0.2rem;
   }
+
+  .link-icon {
+    color: #2d3b51;
+  }
+  .link-icon:hover {
+    color: #39a799
+  }
 </style>
 
 <article class="prose dark:prose-invert max-w-full">
@@ -102,7 +109,7 @@ false }}
               <div class="flex flex-wrap">
                 {{ range $links := . }} {{ range $name, $url := $links }}
                 <a
-                  class="hover:text-primary-400 text-primary-800 dark:text-primary-200 px-1"
+                  class="link-icon px-1"
                   href="{{ $url }}"
                   target="_blank"
                   aria-label="{{ $name | title }}"

@@ -15,8 +15,8 @@
 
   
   
-    <title>My First Project &middot; Home Page</title>
-    <meta name="title" content="My First Project &middot; Home Page">
+    <title>My First DE Project &middot; Home Page</title>
+    <meta name="title" content="My First DE Project &middot; Home Page">
   
 
   
@@ -54,7 +54,7 @@
   
   <meta property="og:url" content="http://localhost:1313/blog/projects/test-copy-2/">
   <meta property="og:site_name" content="Home Page">
-  <meta property="og:title" content="My First Project">
+  <meta property="og:title" content="My First DE Project">
   <meta property="og:description" content="DE project">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
@@ -66,7 +66,7 @@
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="My First Project">
+  <meta name="twitter:title" content="My First DE Project">
   <meta name="twitter:description" content="DE project">
 
   
@@ -114,8 +114,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/blog/css/main.bundle.min.6e1509b7938d4799db53a42b0623a997f6e414dda035d3adae44a6c4df78c1464dcd330c32f177496f15f3829208f47dab03b07a1b20b3c2fed9843b3c25799e.css"
-    integrity="sha512-bhUJt5ONR5nbU6QrBiOpl/bkFN2gNdOtrkSmxN94wUZNzTMMMvF3SW8V84KSCPR9qwOwehsgs8L&#43;2YQ7PCV5ng==">
+    href="/blog/css/main.bundle.min.97ace04c2cabdfb5ca16efa6587832fcf8931e098385c6aa408df244b97c8f1d4f82af9d57541af5910bebe922adcf4536f8609be26d588fff763c7a6aa8385e.css"
+    integrity="sha512-l6zgTCyr37XKFu&#43;mWHgy/PiTHgmDhcaqQI3yRLl8jx1Pgq&#43;dV1Qa9ZEL6&#43;kirc9FNvhgm&#43;JtWI//djx6aqg4Xg==">
 
   
   
@@ -216,8 +216,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "",
-    "name": "My First Project",
-    "headline": "My First Project",
+    "name": "My First DE Project",
+    "headline": "My First DE Project",
     "description": "DE project",
     
     "inLanguage": "en",
@@ -411,13 +411,14 @@
     <a
       
       aria-label="Gallery"
-      class="text-base hover:text-primary-600 dark:hover:text-primary-400 flex items-center"
+      class="text-base font-medium hover:text-primary-600 dark:hover:text-primary-400"
       title="">
       <p>
         Gallery
       </p>
-      <span>
-        <span class="relative block icon"><svg
+    </a>
+    <span>
+      <span class="relative block icon"><svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 20 20"
   fill="currentColor"
@@ -430,8 +431,7 @@
   />
 </svg>
 </span>
-      </span>
-    </a>
+    </span>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
@@ -443,7 +443,7 @@
             aria-label="Illustration"
             class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
             
-            <p class="text-sm font-sm font-custom" title="">
+            <p class="text-sm font-sm" title="">
               Illustration
             </p>
           </a>
@@ -639,10 +639,9 @@
     <style>
     .single-title {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-      font-weight: 400 !important;  
-      font-size: 2.2rem !important;  
+      font-weight: 500 !important;  
+      font-size: 2.5rem !important;  
       color: #334155 !important;    
-      letter-spacing: -0.02em;
       line-height: 1.3;
       margin-bottom: 0.5rem;
     }
@@ -656,20 +655,80 @@
       flex-wrap: wrap;
       gap: 0.6rem;
     }
+
+    .article-wrapper {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 4.5rem;
+      padding-bottom: 4rem;
+    }
+
+    .glass-paper {
+      width: 75%; 
+       
+      background-color: rgba(255, 255, 255, 0.4);  
+      backdrop-filter: blur(20px);  
+      -webkit-backdrop-filter: blur(20px);
+       
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 24px;
+       
+      padding: 0.7rem 4rem 2.5rem 3.5rem;
+       
+      box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.02), 
+        0 12px 30px rgba(0, 0, 0, 0.04);
+      margin: 0 1rem;  
+    }
+
+    .article-content {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.85;  
+      color: #334155;     
+    }
+
+    .article-content h1, .article-content h2, .article-content h3 {
+      color: #1e293b;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    
+    .article-content p {
+      margin-bottom: 1.5rem;
+    }
+    
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-footer-outside {
+    width: 75%; 
+    margin-top: 2rem;   
+    padding: 0;         
+    margin-left: 1.2rem;
+    }
+
   </style>
 
-  <article>
-    
-    
-
-    
-    <header id="single_header" class="mt-5 max-w-prose">
+  <article class="article-wrapper">
+    <div class="glass-paper">
       
-      <h1 class="single-title mt-0">
-        My First Project
-      </h1>
-      <div class="single-meta mt-2 mb-8 print:hidden">
+      
+
+      
+      <header id="single_header" class="mt-5 max-w-full mt-10">
         
+        <h1 class="single-title mt-0">
+          My First DE Project
+        </h1>
+        <div class="single-meta mt-2 mb-8 print:hidden">
+          
 
 
 
@@ -743,23 +802,73 @@
           
             
               <a class="relative mt-[0.5rem] me-2" href="/blog/tags/example/">
-                <span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+                <style>
+   
+  .custom-tag {
+     
+    display: inline-block;
+    border-radius: 20px;  
+    padding: 1px 6px;    
+    font-size: 0.75rem;  
+    font-weight: 400;    
+    border: 1px solid;   
+    
+     
+    color: #ffffff  !important;        
+    background-color: rgba(100, 116, 139, 0.1);  
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    background: transparent;
+    transition: all 0.2s ease;
+  }
+
+   
+  .custom-tag:hover {
+    background-color: rgba(201, 233, 221, 0.455);  
+    color: #ffffff !important;
+  }
+
+</style>
+
+<span class="flex cursor-pointer">
+  <span class="custom-tag">
     Example
   </span>
 </span>
-
               </a>
             
               <a class="relative mt-[0.5rem] me-2" href="/blog/tags/hugo/">
-                <span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+                <style>
+   
+  .custom-tag {
+     
+    display: inline-block;
+    border-radius: 20px;  
+    padding: 1px 6px;    
+    font-size: 0.75rem;  
+    font-weight: 400;    
+    border: 1px solid;   
+    
+     
+    color: #ffffff  !important;        
+    background-color: rgba(100, 116, 139, 0.1);  
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    background: transparent;
+    transition: all 0.2s ease;
+  }
+
+   
+  .custom-tag:hover {
+    background-color: rgba(201, 233, 221, 0.455);  
+    color: #ffffff !important;
+  }
+
+</style>
+
+<span class="flex cursor-pointer">
+  <span class="custom-tag">
     Hugo
   </span>
 </span>
-
               </a>
             
           
@@ -773,31 +882,30 @@
 
 
 
-      </div>
-      
-    </header>
-
-    
-    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-      
-      
-      
-      
-      
-
-
-      <div class="min-w-0 min-h-0 max-w-fit">
-        
-
-        <div class="article-content max-w-prose mb-20">
-          <p>test test</p>
-
-          
-          
-          
         </div>
         
+      </header>
+
+      
+      <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+        
+        
+        
+        
+        
+
+        <div class="min-w-0 min-h-0 max-w-fit">
           
+
+          <div class="article-content mb-20">
+            <p>test test</p>
+
+            
+            
+            
+          </div>
+          
+            
   
   
   
@@ -810,6 +918,16 @@
   
     
     
+
+<style>
+  .author-name {
+    color: #1e293b !important;
+  }
+  .author-headline {
+    color: #567386 !important;
+  }
+</style>
+
 <div class="flex author">
   
     
@@ -832,20 +950,29 @@
   
   <div class="place-self-center">
     
-      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+      <div class="text-[0.6rem] author-headline px-1">
         Author
       </div>
-      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300 px-1">
         Yao Xiang
       </div>
     
     
-    <div class="text-2xl sm:text-lg">
+    <div class="text-2xl sm:text-lg"><style>
+  .link-icon {
+    color: #39a799;
+  }
+  .link-icon:hover {
+    color: #2d3b51;
+  }
+</style>
+
+
   <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
     
       
         <a
-          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          class="px-1 link-icon"
           href="https://github.com/Gambos"
           target="_blank"
           aria-label="Github"
@@ -858,7 +985,7 @@
     
       
         <a
-          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          class="px-1 link-icon"
           href="https://www.linkedin.com/in/yao-xiang/"
           target="_blank"
           aria-label="Linkedin"
@@ -883,69 +1010,101 @@
     <div class="mb-2"></div>
   
 
-        
-        
+          
+          
 
-        
+          
 
-        
+          
 
-      </div>
+        </div>
 
-      
-      
         
         
           
           
+            
+            
+          
+          
+          
+          <script
+            type="text/javascript"
+            src="/blog/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+            integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+            data-oid="views_projects\test copy 2.md"
+            data-oid-likes="likes_projects\test copy 2.md"></script>
         
-        
-        
-        <script
-          type="text/javascript"
-          src="/blog/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
-          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_projects\test copy 2.md"
-          data-oid-likes="likes_projects\test copy 2.md"></script>
-      
-    </section>
+      </section>
+    </div>
 
-    
-    <footer class="pt-1 max-w-prose print:hidden">
       
+      <footer class="article-footer-outside print:hidden">
+        
   
     
     
     
-    <div class="pt-4">
-      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
-      <div class="flex justify-between pt-3">
-        <span class="flex flex-col">
-          
-            <a
-              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="/blog/projects/test-copy-3/">
-              <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;My Second Project
-              </span>
-            </a>
+
+    <style>
+
+      .pagination-link {
+        font-family: 'Inter', -apple-system, sans-serif;
+        font-size: 0.9rem !important;
+        font-weight: 500 !important;
+        color: #415064 !important; 
+        transition: color 0.2s ease, transform 0.2s ease;
+        text-decoration: none !important;
+      }
+
+       
+      .pagination-link:hover {
+        color: #39a799 !important; 
+        transform: translateX(0); 
+      }
+
+       
+      .pagination-date {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem !important;  
+        color: #7ca0a4 !important;
+        font-weight: 400;
+        line-height: 1.2; 
+      }
+    </style>
+
+    <div class="pt-8 mt-2">
+      <hr class="border-dashed border-neutral-200 dark:border-neutral-700 opacity-60 mb-3">
+      <div class="flex justify-between items-start w-full">
+        
+          <a class="pagination-link flex text-left" href="/blog/projects/test-copy-3/">
             
-              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                <time datetime="2025-11-21T00:00:00&#43;00:00">November 21, 2025</time>
-              </span>
+            <span class="pagination-arrow arrow-left mr-2">&larr;</span>
             
-          
-        </span>
-        <span class="flex flex-col items-end">
-          
-        </span>
+            <div class="flex flex-col">
+              <span class="pagination-title line-clamp-2">
+                My Second Project
+              </span>
+              
+                <span class="pagination-date">
+                  <time datetime="2025-11-21T00:00:00&#43;00:00">November 21, 2025</time>
+                </span>
+              
+            </div>
+          </a>
+
+        
+
+
+        
       </div>
     </div>
   
 
 
-      
-    </footer>
+
+        
+      </footer>
   </article>
 
         

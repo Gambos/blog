@@ -1,0 +1,32 @@
+<style>
+  /* 自定义 Tag 样式 */
+  .custom-tag {
+    /* 基础布局 (保留原来的) */
+    display: inline-block;
+    border-radius: 20px; /* rounded-md */
+    padding: 1px 6px;   /* px-1 py-[1px] */
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 400;   /* font-normal */
+    border: 1px solid;  /* border */
+    
+    /* 颜色设置 */
+    color: #ffffff  !important;       /* 字体颜色 */
+    background-color: rgba(100, 116, 139, 0.1); /* 与文字同色，但只有 10% 不透明度 */
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    background: transparent;
+    transition: all 0.2s ease;
+  }
+
+  /* 悬停效果 */
+  .custom-tag:hover {
+    background-color: rgba(201, 233, 221, 0.455); /* 悬停时背景变深一点 */
+    color: #ffffff !important;
+  }
+
+</style>
+
+<span class="flex cursor-pointer">
+  <span class="custom-tag">
+    {{ . }}
+  </span>
+</span>

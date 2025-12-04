@@ -9,27 +9,7 @@
     <managingEditor>xiangyaontt@gmail.com (Yao Xiang)</managingEditor>
     <webMaster>xiangyaontt@gmail.com (Yao Xiang)</webMaster>
     
-    <lastBuildDate>Fri, 21 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>My First Project</title>
-      <link>http://localhost:1313/blog/projects/test-copy-2/</link>
-      <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
-      <author>xiangyaontt@gmail.com (Yao Xiang)</author>
-      <guid>http://localhost:1313/blog/projects/test-copy-2/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>My Second Project</title>
-      <link>http://localhost:1313/blog/projects/test-copy-3/</link>
-      <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
-      <author>xiangyaontt@gmail.com (Yao Xiang)</author>
-      <guid>http://localhost:1313/blog/projects/test-copy-3/</guid>
-      <description></description>
-      
-    </item>
+    <lastBuildDate>Thu, 20 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>My Third Article</title>
@@ -37,26 +17,6 @@
       <pubDate>Thu, 20 Nov 2025 00:00:00 +0000</pubDate>
       <author>xiangyaontt@gmail.com (Yao Xiang)</author>
       <guid>http://localhost:1313/blog/posts/test-copy-2/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>My Second Article</title>
-      <link>http://localhost:1313/blog/posts/test-copy/</link>
-      <pubDate>Wed, 19 Nov 2025 00:00:00 +0000</pubDate>
-      <author>xiangyaontt@gmail.com (Yao Xiang)</author>
-      <guid>http://localhost:1313/blog/posts/test-copy/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>My First Article</title>
-      <link>http://localhost:1313/blog/posts/test/</link>
-      <pubDate>Mon, 17 Nov 2025 00:00:00 +0000</pubDate>
-      <author>xiangyaontt@gmail.com (Yao Xiang)</author>
-      <guid>http://localhost:1313/blog/posts/test/</guid>
       <description></description>
       
     </item>

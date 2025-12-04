@@ -13,15 +13,15 @@
         {{ end }}
       {{ end }}
       {{ with or .Name .Pre }}aria-label="{{ . }}"{{ end }}
-      class="text-base hover:text-primary-600 dark:hover:text-primary-400 flex items-center"
+      class="text-base font-medium hover:text-primary-600 dark:hover:text-primary-400"
       title="{{ .Title }}">
       <p>
         {{ .Name | markdownify }}
       </p>
-      <span>
-        {{ partial "icon.html" "chevron-down" }}
-      </span>
     </a>
+    <span>
+      {{ partial "icon.html" "chevron-down" }}
+    </span>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
@@ -39,7 +39,7 @@
                 {{ partial "icon.html" .Pre }}
               </span>
             {{ end }}
-            <p class="text-sm font-sm font-custom" title="{{ .Title }}">
+            <p class="text-sm font-sm" title="{{ .Title }}">
               {{ .Name | markdownify }}
             </p>
           </a>

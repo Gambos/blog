@@ -114,8 +114,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/blog/css/main.bundle.min.6e1509b7938d4799db53a42b0623a997f6e414dda035d3adae44a6c4df78c1464dcd330c32f177496f15f3829208f47dab03b07a1b20b3c2fed9843b3c25799e.css"
-    integrity="sha512-bhUJt5ONR5nbU6QrBiOpl/bkFN2gNdOtrkSmxN94wUZNzTMMMvF3SW8V84KSCPR9qwOwehsgs8L&#43;2YQ7PCV5ng==">
+    href="/blog/css/main.bundle.min.97ace04c2cabdfb5ca16efa6587832fcf8931e098385c6aa408df244b97c8f1d4f82af9d57541af5910bebe922adcf4536f8609be26d588fff763c7a6aa8385e.css"
+    integrity="sha512-l6zgTCyr37XKFu&#43;mWHgy/PiTHgmDhcaqQI3yRLl8jx1Pgq&#43;dV1Qa9ZEL6&#43;kirc9FNvhgm&#43;JtWI//djx6aqg4Xg==">
 
   
   
@@ -400,13 +400,14 @@
     <a
       
       aria-label="Gallery"
-      class="text-base hover:text-primary-600 dark:hover:text-primary-400 flex items-center"
+      class="text-base font-medium hover:text-primary-600 dark:hover:text-primary-400"
       title="">
       <p>
         Gallery
       </p>
-      <span>
-        <span class="relative block icon"><svg
+    </a>
+    <span>
+      <span class="relative block icon"><svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 20 20"
   fill="currentColor"
@@ -419,8 +420,7 @@
   />
 </svg>
 </span>
-      </span>
-    </a>
+    </span>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
@@ -432,7 +432,7 @@
             aria-label="Illustration"
             class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
             
-            <p class="text-sm font-sm font-custom" title="">
+            <p class="text-sm font-sm" title="">
               Illustration
             </p>
           </a>
@@ -645,6 +645,13 @@
     line-height: 1.15;
     margin-left: 0.2rem;
   }
+
+  .link-icon {
+    color: #2d3b51;
+  }
+  .link-icon:hover {
+    color: #39a799
+  }
 </style>
 
 <article class="prose dark:prose-invert max-w-full">
@@ -712,7 +719,7 @@ I found interesting here.</em>
               <div class="flex flex-wrap">
                  
                 <a
-                  class="hover:text-primary-400 text-primary-800 dark:text-primary-200 px-1"
+                  class="link-icon px-1"
                   href="https://github.com/Gambos"
                   target="_blank"
                   aria-label="Github"
@@ -724,7 +731,7 @@ I found interesting here.</em>
                 </a>
                   
                 <a
-                  class="hover:text-primary-400 text-primary-800 dark:text-primary-200 px-1"
+                  class="link-icon px-1"
                   href="https://www.linkedin.com/in/yao-xiang/"
                   target="_blank"
                   aria-label="Linkedin"
@@ -862,7 +869,7 @@ I found interesting here.</em>
     font-weight: 400 !important;  
     font-size: 1.4rem !important;  
     color: #334155 !important;  
-    letter-spacing: -0.01em;
+    letter-spacing: 0.02em;
     line-height: 1.4;
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
@@ -881,7 +888,7 @@ I found interesting here.</em>
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.2rem;
   }
   .custom-glass-card:hover .glass-meta {
     color: #74b5aa !important;  
@@ -901,6 +908,8 @@ I found interesting here.</em>
     color: #567386 !important;  
     line-height: 1.7 !important;  
     font-weight: 300 !important;
+    letter-spacing: 0.02em;
+    margin-top: 0.6rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;  
     -webkit-box-orient: vertical;
@@ -922,7 +931,7 @@ I found interesting here.</em>
         
         class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800">
         <h2 class="glass-title">
-          My Third Article
+          累
           
         </h2>
       </a>
@@ -940,7 +949,7 @@ I found interesting here.</em>
           <span class="meta-dot"></span>
 
           
-          <span>2 words</span>
+          <span>1 words</span>
 
           
           <span class="meta-dot"></span>
@@ -952,8 +961,84 @@ I found interesting here.</em>
     </div>
     
     
+      <div class="flex flex-row flex-wrap items-center" style="margin-left: -2px;">
+        
+          <a class="relative me-2"href="/blog/tags/example/">
+          <style>
+   
+  .custom-tag {
+     
+    display: inline-block;
+    border-radius: 20px;  
+    padding: 1px 6px;    
+    font-size: 0.75rem;  
+    font-weight: 400;    
+    border: 1px solid;   
+    
+     
+    color: #ffffff  !important;        
+    background-color: rgba(100, 116, 139, 0.1);  
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    background: transparent;
+    transition: all 0.2s ease;
+  }
+
+   
+  .custom-tag:hover {
+    background-color: rgba(201, 233, 221, 0.455);  
+    color: #ffffff !important;
+  }
+
+</style>
+
+<span class="flex cursor-pointer">
+  <span class="custom-tag">
+    Example
+  </span>
+</span>
+          </a>
+        
+          <a class="relative me-2"href="/blog/tags/hugo/">
+          <style>
+   
+  .custom-tag {
+     
+    display: inline-block;
+    border-radius: 20px;  
+    padding: 1px 6px;    
+    font-size: 0.75rem;  
+    font-weight: 400;    
+    border: 1px solid;   
+    
+     
+    color: #ffffff  !important;        
+    background-color: rgba(100, 116, 139, 0.1);  
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    background: transparent;
+    transition: all 0.2s ease;
+  }
+
+   
+  .custom-tag:hover {
+    background-color: rgba(201, 233, 221, 0.455);  
+    color: #ffffff !important;
+  }
+
+</style>
+
+<span class="flex cursor-pointer">
+  <span class="custom-tag">
+    Hugo
+  </span>
+</span>
+          </a>
+        
+      </div>
+    
+
+    
       <div class="glass-desc">
-        一句话摘要内容。
+        手搓网站好累下次还是用模板吧
       </div>
     
   </div>
@@ -1051,7 +1136,7 @@ I found interesting here.</em>
     font-weight: 400 !important;  
     font-size: 1.4rem !important;  
     color: #334155 !important;  
-    letter-spacing: -0.01em;
+    letter-spacing: 0.02em;
     line-height: 1.4;
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
@@ -1070,7 +1155,7 @@ I found interesting here.</em>
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.2rem;
   }
   .custom-glass-card:hover .glass-meta {
     color: #74b5aa !important;  
@@ -1090,6 +1175,8 @@ I found interesting here.</em>
     color: #567386 !important;  
     line-height: 1.7 !important;  
     font-weight: 300 !important;
+    letter-spacing: 0.02em;
+    margin-top: 0.6rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;  
     -webkit-box-orient: vertical;
@@ -1107,11 +1194,11 @@ I found interesting here.</em>
     <header>
       <a
         
-          href="/blog/posts/test-copy/"
+          href="/blog/posts/hugo-website-custimisation/"
         
         class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800">
         <h2 class="glass-title">
-          My Second Article
+          Unlock the Full Potential of Hugo Blowfish-Themed Website
           
         </h2>
       </a>
@@ -1129,7 +1216,7 @@ I found interesting here.</em>
           <span class="meta-dot"></span>
 
           
-          <span>2 words</span>
+          <span>44 words</span>
 
           
           <span class="meta-dot"></span>
@@ -1141,8 +1228,84 @@ I found interesting here.</em>
     </div>
     
     
+      <div class="flex flex-row flex-wrap items-center" style="margin-left: -2px;">
+        
+          <a class="relative me-2"href="/blog/tags/web-development/">
+          <style>
+   
+  .custom-tag {
+     
+    display: inline-block;
+    border-radius: 20px;  
+    padding: 1px 6px;    
+    font-size: 0.75rem;  
+    font-weight: 400;    
+    border: 1px solid;   
+    
+     
+    color: #ffffff  !important;        
+    background-color: rgba(100, 116, 139, 0.1);  
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    background: transparent;
+    transition: all 0.2s ease;
+  }
+
+   
+  .custom-tag:hover {
+    background-color: rgba(201, 233, 221, 0.455);  
+    color: #ffffff !important;
+  }
+
+</style>
+
+<span class="flex cursor-pointer">
+  <span class="custom-tag">
+    Web Development
+  </span>
+</span>
+          </a>
+        
+          <a class="relative me-2"href="/blog/tags/frontend/">
+          <style>
+   
+  .custom-tag {
+     
+    display: inline-block;
+    border-radius: 20px;  
+    padding: 1px 6px;    
+    font-size: 0.75rem;  
+    font-weight: 400;    
+    border: 1px solid;   
+    
+     
+    color: #ffffff  !important;        
+    background-color: rgba(100, 116, 139, 0.1);  
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    background: transparent;
+    transition: all 0.2s ease;
+  }
+
+   
+  .custom-tag:hover {
+    background-color: rgba(201, 233, 221, 0.455);  
+    color: #ffffff !important;
+  }
+
+</style>
+
+<span class="flex cursor-pointer">
+  <span class="custom-tag">
+    Frontend
+  </span>
+</span>
+          </a>
+        
+      </div>
+    
+
+    
       <div class="glass-desc">
-        一句话摘要内容。
+        A Blog Customisation Guide for The Ones Who Know Almost Nothing About Frontend
       </div>
     
   </div>
@@ -1240,7 +1403,7 @@ I found interesting here.</em>
     font-weight: 400 !important;  
     font-size: 1.4rem !important;  
     color: #334155 !important;  
-    letter-spacing: -0.01em;
+    letter-spacing: 0.02em;
     line-height: 1.4;
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
@@ -1259,7 +1422,7 @@ I found interesting here.</em>
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.2rem;
   }
   .custom-glass-card:hover .glass-meta {
     color: #74b5aa !important;  
@@ -1279,6 +1442,8 @@ I found interesting here.</em>
     color: #567386 !important;  
     line-height: 1.7 !important;  
     font-weight: 300 !important;
+    letter-spacing: 0.02em;
+    margin-top: 0.6rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;  
     -webkit-box-orient: vertical;
@@ -1296,11 +1461,11 @@ I found interesting here.</em>
     <header>
       <a
         
-          href="/blog/posts/test/"
+          href="/blog/posts/sql-optimisation-guidance/"
         
         class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800">
         <h2 class="glass-title">
-          My First Article
+          SQL Optimisation Cheetsheet
           
         </h2>
       </a>
@@ -1318,20 +1483,96 @@ I found interesting here.</em>
           <span class="meta-dot"></span>
 
           
-          <span>2 words</span>
+          <span>1885 words</span>
 
           
           <span class="meta-dot"></span>
           
           
           <span class="opacity-90">
-            1 min read
+            9 min read
           </span>
     </div>
     
     
+      <div class="flex flex-row flex-wrap items-center" style="margin-left: -2px;">
+        
+          <a class="relative me-2"href="/blog/tags/data-engineer/">
+          <style>
+   
+  .custom-tag {
+     
+    display: inline-block;
+    border-radius: 20px;  
+    padding: 1px 6px;    
+    font-size: 0.75rem;  
+    font-weight: 400;    
+    border: 1px solid;   
+    
+     
+    color: #ffffff  !important;        
+    background-color: rgba(100, 116, 139, 0.1);  
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    background: transparent;
+    transition: all 0.2s ease;
+  }
+
+   
+  .custom-tag:hover {
+    background-color: rgba(201, 233, 221, 0.455);  
+    color: #ffffff !important;
+  }
+
+</style>
+
+<span class="flex cursor-pointer">
+  <span class="custom-tag">
+    Data Engineer
+  </span>
+</span>
+          </a>
+        
+          <a class="relative me-2"href="/blog/tags/sql/">
+          <style>
+   
+  .custom-tag {
+     
+    display: inline-block;
+    border-radius: 20px;  
+    padding: 1px 6px;    
+    font-size: 0.75rem;  
+    font-weight: 400;    
+    border: 1px solid;   
+    
+     
+    color: #ffffff  !important;        
+    background-color: rgba(100, 116, 139, 0.1);  
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    background: transparent;
+    transition: all 0.2s ease;
+  }
+
+   
+  .custom-tag:hover {
+    background-color: rgba(201, 233, 221, 0.455);  
+    color: #ffffff !important;
+  }
+
+</style>
+
+<span class="flex cursor-pointer">
+  <span class="custom-tag">
+    SQL
+  </span>
+</span>
+          </a>
+        
+      </div>
+    
+
+    
       <div class="glass-desc">
-        一句话摘要内容1。
+        How to optimise your SQL 
       </div>
     
   </div>

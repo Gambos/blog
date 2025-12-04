@@ -4,24 +4,24 @@
 
   <url>
     <loc>http://localhost:1313/blog/projects/</loc>
-    <lastmod>2025-11-21T00:00:00+00:00</lastmod>
+    <lastmod>2025-11-26T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2025-11-21T00:00:00+00:00</lastmod>
+    <lastmod>2025-11-26T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/blog/projects/test-copy-2/</loc>
-    <lastmod>2025-11-21T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/blog/projects/project2/</loc>
+    <lastmod>2025-11-26T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/blog/projects/test-copy-3/</loc>
+    <loc>http://localhost:1313/blog/projects/project1/</loc>
     <lastmod>2025-11-21T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -39,13 +39,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/blog/posts/test-copy/</loc>
+    <loc>http://localhost:1313/blog/posts/hugo-website-custimisation/</loc>
     <lastmod>2025-11-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/blog/posts/test/</loc>
+    <loc>http://localhost:1313/blog/posts/sql-optimisation-guidance/</loc>
     <lastmod>2025-11-17T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

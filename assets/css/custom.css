@@ -37,12 +37,20 @@ body {
   column-gap: calc(var(--spacing) * 50);
 }
 
+.ml-6 {
+  margin-left: calc(var(--spacing) * 6);
+}
+
 .mt-10 {
   margin-top: calc(var(--spacing) * 10);
 }
 
 .mt-20 {
   margin-top: calc(var(--spacing) * 20);
+}
+
+.max-w-article {
+  max-width: 65%;
 }
 
 /* 首页卡片间距 */
@@ -65,8 +73,8 @@ body {
   margin-top: 2rem;
   margin-bottom: 3rem;
   font-family: 'Inter', sans-serif;
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 2.5rem;
+  font-weight: 600;
   color: #334155;
 }
 

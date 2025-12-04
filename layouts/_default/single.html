@@ -4,10 +4,9 @@
     <style>
     .single-title {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-      font-weight: 400 !important; /* 保持细体 */
-      font-size: 2.2rem !important; /* 比卡片大，作为主标题 */
+      font-weight: 500 !important; /* 保持细体 */
+      font-size: 2.5rem !important; /* 比卡片大，作为主标题 */
       color: #334155 !important;   /* Slate-700 */
-      letter-spacing: -0.02em;
       line-height: 1.3;
       margin-bottom: 0.5rem;
     }
@@ -21,113 +20,173 @@
       flex-wrap: wrap;
       gap: 0.6rem;
     }
+
+    .article-wrapper {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 4.5rem;
+      padding-bottom: 4rem;
+    }
+
+    .glass-paper {
+      width: 75%; 
+      /* 毛玻璃效果 */
+      background-color: rgba(255, 255, 255, 0.4); /* 半透明白 */
+      backdrop-filter: blur(20px); /* 强模糊 */
+      -webkit-backdrop-filter: blur(20px);
+      /* 边框与圆角 */
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 24px;
+      /* 内部留白：让文字呼吸 */
+      padding: 0.7rem 4rem 2.5rem 3.5rem;
+      /* 阴影：制造悬浮感 */
+      box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.02), 
+        0 12px 30px rgba(0, 0, 0, 0.04);
+      margin: 0 1rem; /* 防止在手机端贴边 */
+    }
+
+    .article-content {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.85; /* 增加行高，阅读更舒适 */
+      color: #334155;    /* Slate-700 */
+    }
+
+    .article-content h1, .article-content h2, .article-content h3 {
+      color: #1e293b;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    
+    .article-content p {
+      margin-bottom: 1.5rem;
+    }
+    
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-footer-outside {
+    width: 75%; 
+    margin-top: 2rem;  /* 和上方卡片拉开距离 */
+    padding: 0;        /* 清除默认内边距 */
+    margin-left: 1.2rem;
+    }
+
   </style>
 
-  <article>
-    {{/* Hero */}}
-    {{ if .Params.showHero | default (site.Params.article.showHero | default false) }}
-      {{ $heroStyle := .Params.heroStyle }}
-      {{ if not $heroStyle }}{{ $heroStyle = site.Params.article.heroStyle }}{{ end }}
-      {{ $heroStyle := print "hero/" $heroStyle ".html" }}
-      {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
-        {{ partial $heroStyle . }}
-      {{ else }}
-        {{ partial "hero/basic.html" . }}
+  <article class="article-wrapper">
+    <div class="glass-paper">
+      {{/* Hero */}}
+      {{ if .Params.showHero | default (site.Params.article.showHero | default false) }}
+        {{ $heroStyle := .Params.heroStyle }}
+        {{ if not $heroStyle }}{{ $heroStyle = site.Params.article.heroStyle }}{{ end }}
+        {{ $heroStyle := print "hero/" $heroStyle ".html" }}
+        {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
+          {{ partial $heroStyle . }}
+        {{ else }}
+          {{ partial "hero/basic.html" . }}
+        {{ end }}
       {{ end }}
-    {{ end }}
 
-    {{/* Header */}}
-    <header id="single_header" class="mt-5 max-w-prose">
-      {{ if .Params.showBreadcrumbs | default (site.Params.article.showBreadcrumbs | default false) }}
-        {{ partial "breadcrumbs.html" . }}
-      {{ end }}
-      <h1 class="single-title mt-0">
-        {{ .Title | emojify }}
-      </h1>
-      <div class="single-meta mt-2 mb-8 print:hidden">
-        {{ partial "article-meta/basic.html" (dict "context" . "scope" "single") }}
-      </div>
-      {{ if not (.Params.showAuthorBottom | default (site.Params.article.showAuthorBottom | default false)) }}
-        {{ template "SingleAuthor" . }}
-      {{ end }}
-    </header>
-
-    {{/* Body */}}
-    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-      {{ $enableToc := site.Params.article.showTableOfContents | default false }}
-      {{ $enableToc = .Params.showTableOfContents | default $enableToc }}
-      {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
-      {{ $topClass := cond (hasPrefix site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
-      {{ if $showToc }}
-        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
-          <div class="toc ps-5 print:hidden lg:sticky {{ $topClass }}">
-            {{ if $showToc }}
-              {{ partial "toc.html" . }}
-            {{ end }}
-          </div>
+      {{/* Header */}}
+      <header id="single_header" class="mt-5 max-w-full mt-10">
+        {{ if .Params.showBreadcrumbs | default (site.Params.article.showBreadcrumbs | default false) }}
+          {{ partial "breadcrumbs.html" . }}
+        {{ end }}
+        <h1 class="single-title mt-0">
+          {{ .Title | emojify }}
+        </h1>
+        <div class="single-meta mt-2 mb-8 print:hidden">
+          {{ partial "article-meta/basic.html" (dict "context" . "scope" "single") }}
         </div>
-      {{ end }}
-
-
-      <div class="min-w-0 min-h-0 max-w-fit">
-        {{ partial "series/series.html" . }}
-        <div class="article-content max-w-prose mb-20">
-          {{ .Content }}
-          {{ $defaultReplyByEmail := site.Params.replyByEmail }}
-          {{ $replyByEmail := default $defaultReplyByEmail .Params.replyByEmail }}
-          {{ if $replyByEmail }}
-            <strong class="block mt-8">
-              <a
-                target="_blank"
-                class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-                href="mailto:{{ site.Params.Author.email }}?subject={{ replace (printf "Reply to %s" .Title) "\"" "'" }}">
-                Reply by Email
-              </a>
-            </strong>
-          {{ end }}
-        </div>
-        {{ if (.Params.showAuthorBottom | default (site.Params.article.showAuthorBottom | default false)) }}
+        {{ if not (.Params.showAuthorBottom | default (site.Params.article.showAuthorBottom | default false)) }}
           {{ template "SingleAuthor" . }}
         {{ end }}
-        {{ partial "series/series-closed.html" . }}
-        {{ partial "sharing-links.html" . }}
-        {{ partial "related.html" . }}
-      </div>
+      </header>
 
-      {{ $translations := .AllTranslations }}
-      {{ with .File }}
-        {{ $path := .Path }}
-        {{ range $translations }}
-          {{ $lang := print "."  .Lang  ".md" }}
-          {{ $path = replace $path $lang ".md" }}
-        {{ end }}
-        {{ $jsPage := resources.Get "js/page.js" }}
-        {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
-        <script
-          type="text/javascript"
-          src="{{ $jsPage.RelPermalink }}"
-          integrity="{{ $jsPage.Data.Integrity }}"
-          data-oid="views_{{ $path }}"
-          data-oid-likes="likes_{{ $path }}"></script>
-      {{ end }}
-    </section>
-
-    {{/* Footer */}}
-    <footer class="pt-1 max-w-prose print:hidden">
-      {{ partial "article-pagination.html" . }}
-      {{ if .Params.showComments | default (site.Params.article.showComments | default false) }}
-        {{ if templates.Exists "partials/comments.html" }}
-          <div class="pt-3">
-            <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
-            <div class="pt-3">
-              {{ partial "comments.html" . }}
+      {{/* Body */}}
+      <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+        {{ $enableToc := site.Params.article.showTableOfContents | default false }}
+        {{ $enableToc = .Params.showTableOfContents | default $enableToc }}
+        {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
+        {{ $topClass := cond (hasPrefix site.Params.header.layout "fixed") "lg:top-[140px]" "lg:top-10" }}
+        {{ if $showToc }}
+          <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+            <div class="toc ps-5 print:hidden lg:sticky {{ $topClass }}">
+              {{ if $showToc }}
+                {{ partial "toc.html" . }}
+              {{ end }}
             </div>
           </div>
-        {{ else }}
-          {{ warnf "[BLOWFISH] Comments are enabled for %s but no comments partial exists." .File.Path }}
         {{ end }}
-      {{ end }}
-    </footer>
+
+        <div class="min-w-0 min-h-0 max-w-fit">
+          {{ partial "series/series.html" . }}
+          <div class="article-content mb-20">
+            {{ .Content }}
+            {{ $defaultReplyByEmail := site.Params.replyByEmail }}
+            {{ $replyByEmail := default $defaultReplyByEmail .Params.replyByEmail }}
+            {{ if $replyByEmail }}
+              <strong class="block mt-8">
+                <a
+                  target="_blank"
+                  class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+                  href="mailto:{{ site.Params.Author.email }}?subject={{ replace (printf "Reply to %s" .Title) "\"" "'" }}">
+                  Reply by Email
+                </a>
+              </strong>
+            {{ end }}
+          </div>
+          {{ if (.Params.showAuthorBottom | default (site.Params.article.showAuthorBottom | default false)) }}
+            {{ template "SingleAuthor" . }}
+          {{ end }}
+          {{ partial "series/series-closed.html" . }}
+          {{ partial "sharing-links.html" . }}
+          {{ partial "related.html" . }}
+        </div>
+
+        {{ $translations := .AllTranslations }}
+        {{ with .File }}
+          {{ $path := .Path }}
+          {{ range $translations }}
+            {{ $lang := print "."  .Lang  ".md" }}
+            {{ $path = replace $path $lang ".md" }}
+          {{ end }}
+          {{ $jsPage := resources.Get "js/page.js" }}
+          {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
+          <script
+            type="text/javascript"
+            src="{{ $jsPage.RelPermalink }}"
+            integrity="{{ $jsPage.Data.Integrity }}"
+            data-oid="views_{{ $path }}"
+            data-oid-likes="likes_{{ $path }}"></script>
+        {{ end }}
+      </section>
+    </div>
+
+      {{/* Footer */}}
+      <footer class="article-footer-outside print:hidden">
+        {{ partial "article-pagination.html" . }}
+        {{ if .Params.showComments | default (site.Params.article.showComments | default false) }}
+          {{ if templates.Exists "partials/comments.html" }}
+            <div class="pt-3">
+              <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+              <div class="pt-3">
+                {{ partial "comments.html" . }}
+              </div>
+            </div>
+          {{ else }}
+            {{ warnf "[BLOWFISH] Comments are enabled for %s but no comments partial exists." .File.Path }}
+          {{ end }}
+        {{ end }}
+      </footer>
   </article>
 {{ end }}
 

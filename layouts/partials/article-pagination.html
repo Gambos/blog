@@ -6,42 +6,76 @@
       {{ $next = .PrevInSection }}
       {{ $prev = .NextInSection }}
     {{ end }}
-    <div class="pt-4">
-      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
-      <div class="flex justify-between pt-3">
-        <span class="flex flex-col">
-          {{ if $prev }}
-            <a
-              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="{{ $prev.RelPermalink }}">
-              <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;{{ $prev.Title | emojify }}
+
+    <style>
+
+      .pagination-link {
+        font-family: 'Inter', -apple-system, sans-serif;
+        font-size: 0.9rem !important;
+        font-weight: 500 !important;
+        color: #415064 !important; 
+        transition: color 0.2s ease, transform 0.2s ease;
+        text-decoration: none !important;
+      }
+
+      /* 悬停效果 */
+      .pagination-link:hover {
+        color: #39a799 !important; 
+        transform: translateX(0); 
+      }
+
+      /* 日期样式 */
+      .pagination-date {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem !important; /* 极小字号 */
+        color: #7ca0a4 !important;
+        font-weight: 400;
+        line-height: 1.2; 
+      }
+    </style>
+
+    <div class="pt-8 mt-2">
+      <hr class="border-dashed border-neutral-200 dark:border-neutral-700 opacity-60 mb-3">
+      <div class="flex justify-between items-start w-full">
+        {{ if $prev }}
+          <a class="pagination-link flex text-left" href="{{ $prev.RelPermalink }}">
+            <!-- 1. 左箭头 -->
+            <span class="pagination-arrow arrow-left mr-2">&larr;</span>
+            <!-- 2. 文字块容器 (Flex Column) -->
+            <div class="flex flex-col">
+              <span class="pagination-title line-clamp-2">
+                {{ $prev.Title | emojify }}
               </span>
-            </a>
-            {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
-              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                {{ partial "meta/date.html" $prev.Date }}
+              {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
+                <span class="pagination-date">
+                  {{ partial "meta/date.html" $prev.Date }}
+                </span>
+              {{ end }}
+            </div>
+          </a>
+
+        {{ else }}
+          <div class="w-1/2"></div>
+        {{ end }}
+
+
+        {{ if $next }}
+          <a class="pagination-link flex justify-end text-right ml-auto" href="{{ $next.RelPermalink }}">
+            <div class="flex flex-col items-end">
+              <span class="pagination-title line-clamp-2">
+                {{ $next.Title | emojify }}
               </span>
-            {{ end }}
-          {{ end }}
-        </span>
-        <span class="flex flex-col items-end">
-          {{ if $next }}
-            <a
-              class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="{{ $next.RelPermalink }}">
-              <span class="leading-6">
-                {{ $next.Title | emojify }}&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
-              </span>
-            </a>
-            {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
-              <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
-                {{ partial "meta/date.html" $next.Date }}
-              </span>
-            {{ end }}
-          {{ end }}
-        </span>
+              {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
+                <span class="pagination-date">
+                  {{ partial "meta/date.html" $next.Date }}
+                </span>
+              {{ end }}
+            </div>
+            <span class="pagination-arrow arrow-right ml-2">&rarr;</span>  
+          </a>
+        {{ end }}
       </div>
     </div>
   {{ end }}
 {{ end }}
+

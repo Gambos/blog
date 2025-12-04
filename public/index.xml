@@ -9,30 +9,30 @@
     <managingEditor>xiangyaontt@gmail.com (Yao Xiang)</managingEditor>
     <webMaster>xiangyaontt@gmail.com (Yao Xiang)</webMaster>
     
-    <lastBuildDate>Fri, 21 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>My First Project</title>
-      <link>http://localhost:1313/blog/projects/test-copy-2/</link>
-      <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
+      <title>My Second DE Project</title>
+      <link>http://localhost:1313/blog/projects/project2/</link>
+      <pubDate>Wed, 26 Nov 2025 00:00:00 +0000</pubDate>
       <author>xiangyaontt@gmail.com (Yao Xiang)</author>
-      <guid>http://localhost:1313/blog/projects/test-copy-2/</guid>
+      <guid>http://localhost:1313/blog/projects/project2/</guid>
       <description></description>
       
     </item>
     
     <item>
-      <title>My Second Project</title>
-      <link>http://localhost:1313/blog/projects/test-copy-3/</link>
+      <title>My First DE Project</title>
+      <link>http://localhost:1313/blog/projects/project1/</link>
       <pubDate>Fri, 21 Nov 2025 00:00:00 +0000</pubDate>
       <author>xiangyaontt@gmail.com (Yao Xiang)</author>
-      <guid>http://localhost:1313/blog/projects/test-copy-3/</guid>
+      <guid>http://localhost:1313/blog/projects/project1/</guid>
       <description></description>
       
     </item>
     
     <item>
-      <title>My Third Article</title>
+      <title>累</title>
       <link>http://localhost:1313/blog/posts/test-copy-2/</link>
       <pubDate>Thu, 20 Nov 2025 00:00:00 +0000</pubDate>
       <author>xiangyaontt@gmail.com (Yao Xiang)</author>
@@ -42,21 +42,21 @@
     </item>
     
     <item>
-      <title>My Second Article</title>
-      <link>http://localhost:1313/blog/posts/test-copy/</link>
+      <title>Unlock the Full Potential of Hugo Blowfish-Themed Website</title>
+      <link>http://localhost:1313/blog/posts/hugo-website-custimisation/</link>
       <pubDate>Wed, 19 Nov 2025 00:00:00 +0000</pubDate>
       <author>xiangyaontt@gmail.com (Yao Xiang)</author>
-      <guid>http://localhost:1313/blog/posts/test-copy/</guid>
+      <guid>http://localhost:1313/blog/posts/hugo-website-custimisation/</guid>
       <description></description>
       
     </item>
     
     <item>
-      <title>My First Article</title>
-      <link>http://localhost:1313/blog/posts/test/</link>
+      <title>SQL Optimisation Cheetsheet</title>
+      <link>http://localhost:1313/blog/posts/sql-optimisation-guidance/</link>
       <pubDate>Mon, 17 Nov 2025 00:00:00 +0000</pubDate>
       <author>xiangyaontt@gmail.com (Yao Xiang)</author>
-      <guid>http://localhost:1313/blog/posts/test/</guid>
+      <guid>http://localhost:1313/blog/posts/sql-optimisation-guidance/</guid>
       <description></description>
       
     </item>

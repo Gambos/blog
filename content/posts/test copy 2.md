@@ -1,8 +1,8 @@
 ---
-title: "My Third Article"
+title: "累"
 date: 2025-11-20
 draft: false
 tags: ["example", "hugo"]
-description: "一句话摘要内容。"
+description: "手搓网站好累下次还是用模板吧"
 ---
-test test
+啊啊啊
