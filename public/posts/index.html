@@ -750,7 +750,7 @@
         
         class="article-title">
         <h2>
-          My Third Article
+          累
           
         </h2>
       </a>
@@ -804,7 +804,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-20T00:00:00&#43;00:00">November 20, 2025</time><span class="px-2" style="color: #d3dbe6">&middot;</span><span>2 words</span><span class="px-2" style="color: #d3dbe6">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2025-11-20T00:00:00&#43;00:00">November 20, 2025</time><span class="px-2" style="color: #d3dbe6">&middot;</span><span>1 word</span><span class="px-2" style="color: #d3dbe6">&middot;</span><span title="Reading time">1 min</span>
     
 
     
@@ -976,7 +976,7 @@
         
         class="article-title">
         <h2>
-          Unlocking the Full Potential of Hugo Blowfish Themed Website
+          Unlock the Full Potential of Hugo Blowfish-Themed Website
           
         </h2>
       </a>
@@ -1030,7 +1030,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-19T00:00:00&#43;00:00">November 19, 2025</time><span class="px-2" style="color: #d3dbe6">&middot;</span><span>21 words</span><span class="px-2" style="color: #d3dbe6">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2025-11-19T00:00:00&#43;00:00">November 19, 2025</time><span class="px-2" style="color: #d3dbe6">&middot;</span><span>44 words</span><span class="px-2" style="color: #d3dbe6">&middot;</span><span title="Reading time">1 min</span>
     
 
     
@@ -1054,7 +1054,7 @@
         
           
             
-              <a class="relative mt-[0.5rem] me-2" href="/blog/tags/web-build/">
+              <a class="relative mt-[0.5rem] me-2" href="/blog/tags/web-development/">
                 <style>
    
   .custom-tag {
@@ -1084,7 +1084,7 @@
 
 <span class="flex cursor-pointer">
   <span class="custom-tag">
-    Web Build
+    Web Development
   </span>
 </span>
               </a>
@@ -1256,7 +1256,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-17T00:00:00&#43;00:00">November 17, 2025</time><span class="px-2" style="color: #d3dbe6">&middot;</span><span>1871 words</span><span class="px-2" style="color: #d3dbe6">&middot;</span><span title="Reading time">9 mins</span>
+      <time datetime="2025-11-17T00:00:00&#43;00:00">November 17, 2025</time><span class="px-2" style="color: #d3dbe6">&middot;</span><span>1882 words</span><span class="px-2" style="color: #d3dbe6">&middot;</span><span title="Reading time">9 mins</span>
     
 
     
@@ -1429,7 +1429,103 @@
   
   
 </footer>
-<div
+<style>
+ 
+  #search-modal {
+     
+    background: rgba(255, 255, 255, 0.95) !important;  
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+     
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    border-radius: 16px !important;
+    
+     
+    box-shadow: 
+      0 20px 40px -10px rgba(0,0,0,0.15),
+      0 0 0 1px rgba(0,0,0,0.02) !important;
+      
+    overflow: hidden;
+  }
+
+   
+  #search-modal header {
+     
+    border-bottom: none !important; 
+    padding: 14px 16px;  
+  }
+
+   
+  #search-query {
+    font-size: 1.2rem !important;  
+    color: #334155 !important;
+    font-weight: 500;
+    caret-color: #2563eb;  
+    
+     
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    
+     
+    margin-left: 8px; 
+    height: 100%;
+  }
+  
+   
+  #search-query::placeholder { color: #94a3b8; opacity: 0.8; }
+
+   
+  #search-results {
+     
+    padding: 0 !important; 
+    
+    max-height: 60vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  
+   
+  #search-results li { 
+    margin: 4px 8px;  
+  }
+
+   
+  #search-results a {
+    display: flex !important;
+    align-items: center !important;
+    padding: 10px 14px !important;
+    border-radius: 10px !important;
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    text-decoration: none !important;
+  }
+
+   
+  #search-results li:first-child {
+    border-top: 1px solid rgba(0,0,0,0.03);
+    margin-top: 0;
+    padding-top: 4px;
+  }
+
+   
+  #search-results a:hover,
+  #search-results a:focus {
+    background-color: rgba(37, 99, 235, 0.08) !important;
+    border-color: rgba(37, 99, 235, 0.1) !important;
+    outline: none !important;
+  }
+
+   
+  #search-results .font-bold { color: #1e293b !important; font-size: 0.95rem !important; }
+  #search-results a:hover .font-bold { color: #2563eb !important; }
+  #search-results .text-sm { color: #64748b !important; font-size: 0.85rem !important; margin-top: 2px; }
+
+</style>
+
+  <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
   data-url="http://localhost:1313/blog/">
@@ -1464,7 +1560,6 @@
     </section>
   </div>
 </div>
-
     </div>
   </body>
   

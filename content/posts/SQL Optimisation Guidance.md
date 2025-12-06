@@ -6,8 +6,6 @@ tags: ["Data Engineer","SQL"]
 description: "How to optimise your SQL "
 showTableOfContents: true
 ---
-右边table of content的样式还没改，跟羊家庙的丑鞋一样丑
-
 ## 1.	How to optimise SQL -- Use Explain plan
 ### a)	What is the Explain Plan?
 

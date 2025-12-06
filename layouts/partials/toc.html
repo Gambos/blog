@@ -1,3 +1,57 @@
+<style>
+  /* 容器基础样式 */
+  .modern-toc-container {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #64748b; /* Slate-500 */
+  }
+
+  /* 针对 Hugo 生成的列表结构 (nav > ul > li > a) 进行样式覆盖 */
+  #TableOfContents ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  #TableOfContents li {
+    margin-top: 0;
+  }
+
+  /* 链接样式 */
+  #TableOfContents a {
+    display: block;
+    text-decoration: none;
+    padding: 4px 0 4px 12px; /* 给左侧线条留位置 */
+    border-left: 2px solid transparent; /* 预留左侧指示线 (透明) */
+    color: #6a7783; /* 默认浅灰 */
+    transition: all 0.2s ease;
+  }
+
+  /* 状态 A: 鼠标悬停 (Hover) */
+  #TableOfContents a:hover {
+    color: #39a799; /* 变蓝 */
+    border-left-color: #39a799; /* 左侧出现蓝线 */
+    background: linear-gradient(90deg, rgba(37,99,235,0.05) 0%, transparent 100%); /* 极淡的背景光晕 */
+  }
+
+  /* 状态 B: 当前激活 (Active)
+     这个 .active 类是由底部的 JavaScript 自动添加的 */
+  #TableOfContents a.active {
+    color: #39a799 !important; 
+    border-left-color: #39a799;
+    font-weight: 500;
+  }
+
+  /* 二级目录缩进 */
+  #TableOfContents ul ul {
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+    /* 给子目录加一条极细的灰线引导 */
+    border-left: 1.5px solid rgba(0,0,0,0.05); 
+  }
+</style>
+
 <details
   open
   id="TOCView"
@@ -7,17 +61,20 @@
     {{ i18n "article.table_of_contents" }}
   </summary>
   <div
-    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    class="modern-toc-container min-w-[220px] py-2">
     {{ .TableOfContents | emojify }}
   </div>
 </details>
-<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+
+<details class="toc-inside mt-6 mb-6 overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700 lg:hidden">
   <summary
-    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    {{ i18n "article.table_of_contents" }}
+    class="py-3 px-4 text-base font-medium cursor-pointer flex justify-between items-center text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+    <span>{{ i18n "article.table_of_contents" }}</span>
+    <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
   </summary>
+
   <div
-    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    class="modern-toc-container px-4 pb-4 pt-2 bg-neutral-50/50 dark:bg-neutral-800/30">
     {{ .TableOfContents | emojify }}
   </div>
 </details>
@@ -29,7 +86,14 @@
 
     const SCROLL_OFFSET_RATIO = 0.33
     const TOC_SELECTOR = '#TableOfContents'
-    const ANCHOR_SELECTOR = '.anchor'
+    
+    /* 
+       选择器策略：
+       直接寻找带有 ID 的标题标签 (h1-h4)。
+       这比 .article-content h2 更稳健，能适应各种 HTML 结构变动。
+    */
+    const ANCHOR_SELECTOR = 'h1[id], h2[id], h3[id], h4[id]'
+    
     const TOC_LINK_SELECTOR = 'a[href^="#"]'
     const NESTED_LIST_SELECTOR = 'li ul'
     const ACTIVE_CLASS = 'active'
@@ -38,7 +102,15 @@
     function getActiveAnchorId(anchors, offsetRatio) {
       const threshold = window.scrollY + window.innerHeight * offsetRatio
       const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
-      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+      
+      /* 核心修复：解码 href，防止中文/特殊字符不匹配 */
+      const tocIds = new Set(tocLinks.map(link => {
+        try {
+          return decodeURIComponent(link.getAttribute('href')).substring(1)
+        } catch (e) {
+          return link.getAttribute('href').substring(1)
+        }
+      }))
 
       if (isJumpingToAnchor) {
         for (let i = 0; i < anchors.length; i++) {
@@ -51,10 +123,14 @@
         }
       }
 
+      // 倒序查找当前视口内的标题
       for (let i = anchors.length - 1; i >= 0; i--) {
-        const top = anchors[i].getBoundingClientRect().top + window.scrollY
-        if (top <= threshold && tocIds.has(anchors[i].id)) {
-          return anchors[i].id
+        const anchor = anchors[i]
+        const top = anchor.getBoundingClientRect().top + window.scrollY
+        
+        // 如果标题在阈值线之上，且它存在于 TOC 中
+        if (top <= threshold && tocIds.has(anchor.id)) {
+          return anchor.id
         }
       }
       return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
@@ -62,11 +138,19 @@
 
     function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
       const activeId = getActiveAnchorId(anchors, scrollOffset)
-      if (!activeId) return
-
+      
       links.forEach(link => {
-        const isActive = link.getAttribute('href') === `#${activeId}`
-        link.classList.toggle(ACTIVE_CLASS, isActive)
+        let linkHref = link.getAttribute('href')
+        try { linkHref = decodeURIComponent(linkHref) } catch (e) {}
+        
+        const targetHash = `#${activeId}`
+        const isActive = activeId && linkHref === targetHash
+
+        if (isActive) {
+          link.classList.add(ACTIVE_CLASS)
+        } else {
+          link.classList.remove(ACTIVE_CLASS)
+        }
 
         if (collapseInactive) {
           const ul = link.closest('li')?.querySelector('ul')
@@ -74,7 +158,7 @@
         }
       })
 
-      if (collapseInactive) {
+      if (collapseInactive && activeId) {
         const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
         let el = activeLink
         while (el && el !== toc) {
@@ -89,9 +173,13 @@
       const toc = document.querySelector(TOC_SELECTOR)
       if (!toc) return
 
-      const collapseInactive = {{ if site.Params.smartTOCHideUnfocusedChildren }}true{{ else }}false{{ end }}
       const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
       const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      // 如果没有找到任何标题，直接退出，防止报错
+      if (anchors.length === 0) return
+
+      const collapseInactive = {{ if site.Params.smartTOCHideUnfocusedChildren }}true{{ else }}false{{ end }}
 
       if (collapseInactive) {
         toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
@@ -100,6 +188,7 @@
       links.forEach(link => {
         link.addEventListener('click', () => {
           isJumpingToAnchor = true
+          setTimeout(() => { isJumpingToAnchor = false }, 1000)
         })
       })
 
@@ -114,9 +203,11 @@
       window.addEventListener('scroll', () => updateTOC(config), { passive: true })
       window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
 
+      // 初始化立即执行一次
       updateTOC(config)
     }
 
+    // 启动逻辑
     document.readyState === 'loading'
       ? document.addEventListener('DOMContentLoaded', initTOC)
       : initTOC()

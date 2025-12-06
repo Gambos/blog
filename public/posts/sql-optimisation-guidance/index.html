@@ -235,7 +235,7 @@
     "keywords": ["Data Engineer","SQL"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1885"
+    "wordCount": "1882"
   }]
   </script>
 
@@ -667,7 +667,7 @@
     }
 
     .glass-paper {
-      width: 75%; 
+      width: 90%; 
        
       background-color: rgba(255, 255, 255, 0.4);  
       backdrop-filter: blur(20px);  
@@ -676,7 +676,7 @@
       border: 1px solid rgba(255, 255, 255, 0.6);
       border-radius: 24px;
        
-      padding: 0.7rem 4rem 2.5rem 3.5rem;
+      padding: 0.7rem 1rem 2.5rem 3.5rem;
        
       box-shadow: 
         0 4px 6px rgba(0, 0, 0, 0.02), 
@@ -708,7 +708,7 @@
     }
 
     .article-footer-outside {
-    width: 75%; 
+    width: 90%; 
     margin-top: 2rem;   
     padding: 0;         
     margin-left: 1.2rem;
@@ -777,7 +777,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-11-17T00:00:00&#43;00:00">November 17, 2025</time><span class="px-2" style="color: #d3dbe6">&middot;</span><span>1885 words</span><span class="px-2" style="color: #d3dbe6">&middot;</span><span title="Reading time">9 mins</span>
+      <time datetime="2025-11-17T00:00:00&#43;00:00">November 17, 2025</time><span class="px-2" style="color: #d3dbe6">&middot;</span><span>1882 words</span><span class="px-2" style="color: #d3dbe6">&middot;</span><span title="Reading time">9 mins</span>
     
 
     
@@ -896,7 +896,60 @@
           <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
             <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
               
-                <details
+                <style>
+   
+  .modern-toc-container {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #64748b;  
+  }
+
+   
+  #TableOfContents ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  #TableOfContents li {
+    margin-top: 0;
+  }
+
+   
+  #TableOfContents a {
+    display: block;
+    text-decoration: none;
+    padding: 4px 0 4px 12px;  
+    border-left: 2px solid transparent;  
+    color: #6a7783;  
+    transition: all 0.2s ease;
+  }
+
+   
+  #TableOfContents a:hover {
+    color: #39a799;  
+    border-left-color: #39a799;  
+    background: linear-gradient(90deg, rgba(37,99,235,0.05) 0%, transparent 100%);  
+  }
+
+   
+  #TableOfContents a.active {
+    color: #39a799 !important; 
+    border-left-color: #39a799;
+    font-weight: 500;
+  }
+
+   
+  #TableOfContents ul ul {
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+     
+    border-left: 1.5px solid rgba(0,0,0,0.05); 
+  }
+</style>
+
+<details
   open
   id="TOCView"
   class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
@@ -905,7 +958,7 @@
     Table of Contents
   </summary>
   <div
-    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    class="modern-toc-container min-w-[220px] py-2">
     <nav id="TableOfContents">
   <ul>
     <li><a href="#1how-to-optimise-sql--use-explain-plan">1.	How to optimise SQL &ndash; Use Explain plan</a>
@@ -926,13 +979,16 @@
 </nav>
   </div>
 </details>
-<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+
+<details class="toc-inside mt-6 mb-6 overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700 lg:hidden">
   <summary
-    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
+    class="py-3 px-4 text-base font-medium cursor-pointer flex justify-between items-center text-neutral-700 dark:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+    <span>Table of Contents</span>
+    <svg class="w-4 h-4 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
   </summary>
+
   <div
-    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    class="modern-toc-container px-4 pb-4 pt-2 bg-neutral-50/50 dark:bg-neutral-800/30">
     <nav id="TableOfContents">
   <ul>
     <li><a href="#1how-to-optimise-sql--use-explain-plan">1.	How to optimise SQL &ndash; Use Explain plan</a>
@@ -955,6 +1011,136 @@
 </details>
 
 
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    
+    
+
+    const ANCHOR_SELECTOR = 'h1[id], h2[id], h3[id], h4[id]'
+    
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      
+       
+      const tocIds = new Set(tocLinks.map(link => {
+        try {
+          return decodeURIComponent(link.getAttribute('href')).substring(1)
+        } catch (e) {
+          return link.getAttribute('href').substring(1)
+        }
+      }))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const anchor = anchors[i]
+        const top = anchor.getBoundingClientRect().top + window.scrollY
+        
+        
+        if (top <= threshold && tocIds.has(anchor.id)) {
+          return anchor.id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      
+      links.forEach(link => {
+        let linkHref = link.getAttribute('href')
+        try { linkHref = decodeURIComponent(linkHref) } catch (e) {}
+        
+        const targetHash = `#${activeId}`
+        const isActive = activeId && linkHref === targetHash
+
+        if (isActive) {
+          link.classList.add(ACTIVE_CLASS)
+        } else {
+          link.classList.remove(ACTIVE_CLASS)
+        }
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive && activeId) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      
+      if (anchors.length === 0) return
+
+      const collapseInactive = false
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+          setTimeout(() => { isJumpingToAnchor = false }, 1000)
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      
+      updateTOC(config)
+    }
+
+    
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
 
               
             </div>
@@ -965,10 +1151,8 @@
           
 
           <div class="article-content mb-20">
-            <p>右边table of content的样式还没改，跟羊家庙的丑鞋一样丑</p>
-
-<h2 class="relative group">1.	How to optimise SQL &ndash; Use Explain plan
-    <div id="1how-to-optimise-sql--use-explain-plan" class="anchor"></div>
+            
+<h2 id="1how-to-optimise-sql--use-explain-plan" class="relative group">1.	How to optimise SQL &ndash; Use Explain plan
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
@@ -977,8 +1161,7 @@
     
 </h2>
 
-<h3 class="relative group">a)	What is the Explain Plan?
-    <div id="awhat-is-the-explain-plan" class="anchor"></div>
+<h3 id="awhat-is-the-explain-plan" class="relative group">a)	What is the Explain Plan?
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
@@ -988,8 +1171,7 @@
 </h3>
 <p>An execution plan describes how the database engine executes a SQL statement — the path it takes through indexes, joins, and tables. It can be overridden by using a hint in query.</p>
 
-<h3 class="relative group">b)	How to read and use the Explain Plan
-    <div id="bhow-to-read-and-use-the-explain-plan" class="anchor"></div>
+<h3 id="bhow-to-read-and-use-the-explain-plan" class="relative group">b)	How to read and use the Explain Plan
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
@@ -1005,8 +1187,7 @@
 By comparing the plan to your intended logic, you can identify inefficiencies such as unnecessary full table scans or expensive join orders. This is also an extremely useful view to help you recognise if you are on the right track when you are adjusting and optimising your query.</li>
 </ol>
 
-<h2 class="relative group">2.	Typical Issues for non-optimised SQL and solutions
-    <div id="2typical-issues-for-non-optimised-sql-and-solutions" class="anchor"></div>
+<h2 id="2typical-issues-for-non-optimised-sql-and-solutions" class="relative group">2.	Typical Issues for non-optimised SQL and solutions
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
@@ -1015,8 +1196,7 @@ By comparing the plan to your intended logic, you can identify inefficiencies su
     
 </h2>
 
-<h3 class="relative group">a) Poorly written SQL Statement
-    <div id="a-poorly-written-sql-statement" class="anchor"></div>
+<h3 id="a-poorly-written-sql-statement" class="relative group">a) Poorly written SQL Statement
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
@@ -1070,8 +1250,7 @@ Subquery dept_id values	NOT IN result	NOT EXISTS result
 {10, NULL}	filtered out	returned
 {10, 20}	returned	returned</p>
 
-<h3 class="relative group">b)	Index Missing or Inefficient Usage
-    <div id="bindex-missing-or-inefficient-usage" class="anchor"></div>
+<h3 id="bindex-missing-or-inefficient-usage" class="relative group">b)	Index Missing or Inefficient Usage
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
@@ -1150,8 +1329,7 @@ Only if the optimizer consistently ignores a useful index.
 </li>
 </ol>
 
-<h3 class="relative group">c)	Hints—Last Resort
-    <div id="chintslast-resort" class="anchor"></div>
+<h3 id="chintslast-resort" class="relative group">c)	Hints—Last Resort
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
@@ -1185,8 +1363,7 @@ They are useful when statistics are correct but the optimizer still makes a poor
 Avoid overusing hints—they make queries less adaptable to schema or data changes.
 DO NOT use PARALLEL on small tables—it can cause contention and excessive overhead.</p>
 
-<h3 class="relative group">d) Incomplete Statistics
-    <div id="d-incomplete-statistics" class="anchor"></div>
+<h3 id="d-incomplete-statistics" class="relative group">d) Incomplete Statistics
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
@@ -1464,7 +1641,103 @@ DO NOT use PARALLEL on small tables—it can cause contention and excessive over
   
   
 </footer>
-<div
+<style>
+ 
+  #search-modal {
+     
+    background: rgba(255, 255, 255, 0.95) !important;  
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+     
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    border-radius: 16px !important;
+    
+     
+    box-shadow: 
+      0 20px 40px -10px rgba(0,0,0,0.15),
+      0 0 0 1px rgba(0,0,0,0.02) !important;
+      
+    overflow: hidden;
+  }
+
+   
+  #search-modal header {
+     
+    border-bottom: none !important; 
+    padding: 14px 16px;  
+  }
+
+   
+  #search-query {
+    font-size: 1.2rem !important;  
+    color: #334155 !important;
+    font-weight: 500;
+    caret-color: #2563eb;  
+    
+     
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    
+     
+    margin-left: 8px; 
+    height: 100%;
+  }
+  
+   
+  #search-query::placeholder { color: #94a3b8; opacity: 0.8; }
+
+   
+  #search-results {
+     
+    padding: 0 !important; 
+    
+    max-height: 60vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  
+   
+  #search-results li { 
+    margin: 4px 8px;  
+  }
+
+   
+  #search-results a {
+    display: flex !important;
+    align-items: center !important;
+    padding: 10px 14px !important;
+    border-radius: 10px !important;
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    text-decoration: none !important;
+  }
+
+   
+  #search-results li:first-child {
+    border-top: 1px solid rgba(0,0,0,0.03);
+    margin-top: 0;
+    padding-top: 4px;
+  }
+
+   
+  #search-results a:hover,
+  #search-results a:focus {
+    background-color: rgba(37, 99, 235, 0.08) !important;
+    border-color: rgba(37, 99, 235, 0.1) !important;
+    outline: none !important;
+  }
+
+   
+  #search-results .font-bold { color: #1e293b !important; font-size: 0.95rem !important; }
+  #search-results a:hover .font-bold { color: #2563eb !important; }
+  #search-results .text-sm { color: #64748b !important; font-size: 0.85rem !important; margin-top: 2px; }
+
+</style>
+
+  <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
   data-url="http://localhost:1313/blog/">
@@ -1499,7 +1772,6 @@ DO NOT use PARALLEL on small tables—it can cause contention and excessive over
     </section>
   </div>
 </div>
-
     </div>
   </body>
   

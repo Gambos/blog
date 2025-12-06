@@ -1483,7 +1483,7 @@ I found interesting here.</em>
           <span class="meta-dot"></span>
 
           
-          <span>1885 words</span>
+          <span>1882 words</span>
 
           
           <span class="meta-dot"></span>
@@ -1653,7 +1653,103 @@ I found interesting here.</em>
   
   
 </footer>
-<div
+<style>
+ 
+  #search-modal {
+     
+    background: rgba(255, 255, 255, 0.95) !important;  
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+     
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    border-radius: 16px !important;
+    
+     
+    box-shadow: 
+      0 20px 40px -10px rgba(0,0,0,0.15),
+      0 0 0 1px rgba(0,0,0,0.02) !important;
+      
+    overflow: hidden;
+  }
+
+   
+  #search-modal header {
+     
+    border-bottom: none !important; 
+    padding: 14px 16px;  
+  }
+
+   
+  #search-query {
+    font-size: 1.2rem !important;  
+    color: #334155 !important;
+    font-weight: 500;
+    caret-color: #2563eb;  
+    
+     
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    
+     
+    margin-left: 8px; 
+    height: 100%;
+  }
+  
+   
+  #search-query::placeholder { color: #94a3b8; opacity: 0.8; }
+
+   
+  #search-results {
+     
+    padding: 0 !important; 
+    
+    max-height: 60vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  
+   
+  #search-results li { 
+    margin: 4px 8px;  
+  }
+
+   
+  #search-results a {
+    display: flex !important;
+    align-items: center !important;
+    padding: 10px 14px !important;
+    border-radius: 10px !important;
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    text-decoration: none !important;
+  }
+
+   
+  #search-results li:first-child {
+    border-top: 1px solid rgba(0,0,0,0.03);
+    margin-top: 0;
+    padding-top: 4px;
+  }
+
+   
+  #search-results a:hover,
+  #search-results a:focus {
+    background-color: rgba(37, 99, 235, 0.08) !important;
+    border-color: rgba(37, 99, 235, 0.1) !important;
+    outline: none !important;
+  }
+
+   
+  #search-results .font-bold { color: #1e293b !important; font-size: 0.95rem !important; }
+  #search-results a:hover .font-bold { color: #2563eb !important; }
+  #search-results .text-sm { color: #64748b !important; font-size: 0.85rem !important; margin-top: 2px; }
+
+</style>
+
+  <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
   data-url="http://localhost:1313/blog/">
@@ -1688,7 +1784,6 @@ I found interesting here.</em>
     </section>
   </div>
 </div>
-
     </div>
   </body>
   
