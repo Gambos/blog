@@ -1,6 +1,6 @@
 ---
 title: "A Football Diary, Starting at 25"
-date: 2026-1-26
+date: 2026-01-26
 draft: false
 tags: ["Football"]
 description: "Football is hard but beautiful, but hard"
