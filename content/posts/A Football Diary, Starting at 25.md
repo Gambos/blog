@@ -7,7 +7,7 @@ description: "Football is hard but beautiful, but hard"
 showTableOfContents: true
 ---
 
-What follows are a few scattered logs that emerged after I started playing football in the summer when I was 25. I wanted to write down the emotions I experienced along the way, because this is almost the first time in my life that I’ve been so deeply engaged in a team sport. Football itself is also complex and beautiful. This was originally written in Chinese.
+> What follows are a few scattered logs that emerged after I started playing football in the summer when I was 25. I wanted to write down all the emotions and thoughts I experienced along the way, because this is almost the first time in my life that I’ve been so deeply engaged in a team sport. Football itself is also complex and beautiful. This was originally written in Chinese.
 ---
 ### 2025.07.27  
 跟阿姆的phoenix亚洲女足队试训第一次踢球[抓狂]所有队友都非常认真专业包容热情友善踢得特别开心。。无语啊时至今日才知道踢波这么好玩  
@@ -59,6 +59,7 @@ What follows are a few scattered logs that emerged after I started playing footb
 
 ### 2025.11.10  
 啊，踢球三个月跟着球队踢了几场比赛。和平时松散的训练强度完全，完全，不一样，上场5分钟就因为频繁冲刺短跑而感到虚弱。不记得带过2秒以上的球，可能唯一起到一点点作用的就是上身体拼抢，足球被我玩成了碰碰车。
+
 渐渐意识到真正的足球很美。能踢出真正的足球需要很久。可是这没有使我未能获得幸福。第一次荒唐地在zoom 上开战术会议。第一次进入只在电视剧里看过的球队更衣室。第一次在秋冬低矮的阳光下和队友抢圈。第一次跟换上的队友击掌。第一次在缺氧状态下朦胧地听见边线传来的呐喊。第一次突然和很多原本永远不会认识的人变得亲近。  
 
 新赛季球衣还没设计好，但我已经想好了自己的号码是`25`。这是我开始踢球的年纪
@@ -70,7 +71,9 @@ What follows are a few scattered logs that emerged after I started playing footb
 
 ### 2025.12.11  
 在球队当管理层（？）其实真的要协调蛮多事情的。我一直在人情世故上比较笨拙，不擅长绕弯，总觉得有什么话说开了最简单，故意展现的都是坦率和直来直往的一面，以给别人留下我很好解决、不用对我留心眼的感觉，怕一切相关麻烦。  
+
 但是在球队这种环境下渐渐学到一些事。在所有人都很善良、没有任何坏心眼的良好前提条件下，仍然客观存在着需求的不匹配。我当然不想逃避或者无视，但是以前自己那种任意妄为的处理方式显然也是不充分的。渐渐学会周旋和沟通，找出一些中间地带的方法让各方的需求都被看见和协调，最后让大家都产生共同的理解时，其实感觉特别好。  
+
 以前觉得为人处世之道这个词很俗气难听，但其实从中我能够获得一些自己capable of making things better的自我感知  
 
 ### 2025.12.22  
@@ -91,3 +94,5 @@ What follows are a few scattered logs that emerged after I started playing footb
 一切都很好。但破防恰恰发生在觉得自己有进步并且期待所有人都能带着进步踢得更流畅、更过瘾的情况之下。昨天看见太多脚接不到传球、不启动抢断回防、球在地上还能一脚踢空导致踢得极其卡顿，真的很生气。内心开始怪队友为什么不跑动不上身体不要球。  
 
 我在对抗分组里失误比以前少了，但离自己踢得很好甚至能组织起进攻还差很远很远很远很远。就这心态就已经调整不过来了。渐渐意识到从小团体运动and/or从零开始长线做一件事的经验极度匮乏，导致我这方面情绪波动很大，或者说很急功近利的幼稚。动画片不是15集就能参加全国大赛了吗？  
+
+花了一会儿恢复情绪。也许我不该把自己性格中最沉重的那部分带进一切事物里。我需要想办法继续跟大家共同进步，踢过瘾的足球
