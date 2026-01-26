@@ -7,7 +7,7 @@ description: "Football is hard but beautiful, but hard"
 showTableOfContents: true
 ---
 
-> What follows are a few scattered logs that emerged after I started playing football in the summer when I was 25. I wanted to write down all the emotions and thoughts I experienced along the way, because this is almost the first time in my life that I’ve been so deeply engaged in a team sport. Football itself is also complex and beautiful. This was originally written in Chinese.
+> What follows are a few scattered logs that emerged after I started playing football in the summer when I was 25. I wanted to write down all the emotions and thoughts I experienced along the way, because this is almost the first time in my life that I've been so deeply engaged in a team sport. Not to mention football itself is so complex and beautiful. This was originally written in Chinese.
 ---
 ### 2025.07.27  
 跟阿姆的phoenix亚洲女足队试训第一次踢球[抓狂]所有队友都非常认真专业包容热情友善踢得特别开心。。无语啊时至今日才知道踢波这么好玩  
