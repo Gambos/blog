@@ -7,10 +7,10 @@ description: "Football is hard but beautiful, but hard"
 showTableOfContents: true
 ---
 
-> What follows are a few scattered logs that emerged after I started playing football in the summer when I was 25. I wanted to write down all the emotions and thoughts I experienced along the way, because this is almost the first time in my life that I've been so deeply engaged in a team sport. Not to mention football itself is so complex and beautiful. This was originally written in Chinese.
+> What follows are a few scattered logs that emerged after I started playing football in the summer when I was 25. I wanted to write down all the emotions and thoughts I experienced along the way, because this is almost the first time in my life that I've been so deeply engaged in a team sport. Not to mention football itself is so complex and beautiful. This was originally written in Chinese, but I checked the google translated content is also funny to read through.
 ---
 ### 2025.07.27  
-跟阿姆的phoenix亚洲女足队试训第一次踢球[抓狂]所有队友都非常认真专业包容热情友善踢得特别开心。。无语啊时至今日才知道踢波这么好玩  
+跟阿姆的phoenix亚洲女足队试训第一次踢球，所有队友都非常认真专业包容热情友善踢得特别开心。。无语啊时至今日才知道踢波这么好玩  
 
 ### 2025.08.09  
 我说真的每次跟阿姆女足队一起踢球一起吃饭我的多巴胺都爆了  
@@ -23,7 +23,7 @@ showTableOfContents: true
 
 ### 2025.08.31  
 第一次踢6人+场的雨转晴的梦幻一天😭平时也能有这么多朋友一起踢就好了，求运营自媒体
-第一次踢中场(不是特别会踢中场，感觉更复杂)，助攻1射门1，晚上给自己下了三个蛋，虽然贡献不大但至少跑位很积极
+第一次踢中场(不是特别会踢中场，感觉更复杂)，助攻1射门1，晚上煮面时给自己下了三个蛋，虽然贡献不大但至少跑位很积极
 
 ### 2025.09.01  
 这球踢的，差不多要把全荷兰的拉拉都认识完了，怎么这个运动这么gay啊
@@ -40,7 +40,7 @@ showTableOfContents: true
 也可能其实没那么好但我对自己很满意了！今天特别开心
 
 ### 2025.09.08  
-跟队友激情设计球队队徽。要是很多年前在搞同人的时候能稍微学一下设计就好了，真难啊！！！
+跟队友激情设计球队队徽。要是很多年前我在搞同人的时候能稍微学一下设计就好了，真难啊！！！
 
 ### 2025.09.14  
 足球真不简单。不好踢
@@ -65,7 +65,7 @@ showTableOfContents: true
 新赛季球衣还没设计好，但我已经想好了自己的号码是`25`。这是我开始踢球的年纪
 
 ### 2025.12.07  
-登山者失温后不是容易出现片段式记忆浮现吗，今天踢完浑身浇透打着哆嗦往家骑的时候一直重复性地在想，我擦今天两球（含左脚）一助…和luna一起踢前场爽爆了…eden套边好丝滑解围能力好强…葫芦让我想一个庆祝动作不能进球后捂嘴一副自己也不相信的样子…边拉得够开就能吃到roni的五香大饼…跑位被教练夸了…我擦今天两球（含左脚）一助…  
+登山者失温后不是容易出现片段式记忆浮现吗，今天踢完浑身浇透打着哆嗦往家骑的时候一直重复性地在想，我擦今天两球（含左脚）一助…和luna一起踢前场爽爆了…eden套边好丝滑解围能力好强…葫芦让我想一个庆祝动作、不能进球后捂嘴一副自己也不相信的样子…边拉得够开就能吃到roni的五香大饼…跑位被教练夸了…我擦今天两球（含左脚）一助…  
 
 就这样循环着记忆渐渐忘记了寒冷，平安地回到了家
 
@@ -91,7 +91,7 @@ showTableOfContents: true
 
 首先评价自己的场上表现，在场上什么时候该干嘛/跑位/抬头观察/接传球/卡位/抢断/射门动作这些方面我觉得自己比起几个月前有明显的进步。队友们进步也很大。但是因为找不到那么多女生尤其是有经验的女生踢球，陆续加入队伍的还是完全零基础，这也符合我们的建队初衷，让谁都能踢i.e.快乐足球。我一开始踢球也是畏畏缩缩觉得别人愿意带我踢就很感恩  
 
-一切都很好。但破防恰恰发生在觉得自己有进步并且期待所有人都能带着进步踢得更流畅、更过瘾的情况之下。昨天看见太多脚接不到传球、不启动抢断回防、球在地上还能一脚踢空导致踢得极其卡顿，真的很生气。内心开始怪队友为什么不跑动不上身体不要球。  
+一切都很好。但破防恰恰发生在觉得自己有进步并且期待所有人都能带着进步踢得更流畅、更过瘾的情况之下。昨天看见太多脚接不到传球、不启动抢断回防、球在地上还能一脚踢空导致踢得极其卡顿，真的很生气。心里开始怪队友为什么不跑动不上身体不要球。  
 
 我在对抗分组里失误比以前少了，但离自己踢得很好甚至能组织起进攻还差很远很远很远很远。就这心态就已经调整不过来了。渐渐意识到从小团体运动and/or从零开始长线做一件事的经验极度匮乏，导致我这方面情绪波动很大，或者说很急功近利的幼稚。动画片不是15集就能参加全国大赛了吗？  
 
